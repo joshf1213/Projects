@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Welcome";
+}
+
+<h2>Welcome to Josh Friedman's Web App</h2>
+<body>
+    <h3><script type="text/javascript">
+        var d = new Date()
+        var time = d.getHours()
+        if (time<12)
+            {
+                document.write("<b>Good morning!!</b>");
+            }
+        else if (time>12 && time<18)
+            {
+                document.write("<b>Good afternoon!!</b>");
+            }
+        else
+            {
+                document.write("<b>Good evening!!</b>");
+            }
+        </script></h3>
+    <h4>The time is @ViewData["hour"]:@ViewData["minutes"] @ViewData["ampm"] on @ViewData["day"] @ViewData["month"], @ViewData["date"] @ViewData["year"]</h4>
+    <h4>@ViewData["daystillend"] more days until 2017</h4>
+</body>
+
+
