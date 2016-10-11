@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using System.Globalization;
 using lab4.Models;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace lab4.Controllers
 {
@@ -28,24 +24,33 @@ namespace lab4.Controllers
 
         public IActionResult PersonInfo()
         {
-            ViewData["Message"] = "Welcome to the Person Info Page";
-            personinfo josh = new personinfo {firstName = "Josh", lastname="Friedman", age = 21, birthDate = "12/13/1994"};
-            return View();
+            ViewData["Heading"] = "Person Info";
+            person person = new person()
+            {
+                firstName = "First Name",
+                lastname = "Last Name",
+                birthDate = "10/10/2000",
+                age = 16
+            };
+
+
+            return View(person);
         }
 
-        static PersonRepo person = new PersonRepo();
-       
-        [HttpPost]
-        public IActionResult Create(IEnumerable<personinfo> per)
-        {
-            List<personinfo> personList = new List<personinfo>(per);
 
-            //if (ModelState.IsValid)
-            // {
-            // personinfo.PersonList.Add(newPerson);
-            //  return RedirectToAction("Index");
-            //}
-            return View();
+
+        [HttpPost]
+        public IActionResult PersonInfo(person person)
+        {
+
+            if (ModelState.IsValid)
+            {
+                return View("PersonInfo");
+
+
+            }
+            return View("Error");
+
         }
 
         public IActionResult About()
