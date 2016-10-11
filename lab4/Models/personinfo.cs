@@ -11,6 +11,7 @@ namespace lab4.Models
         public string lastname { get; set; }
         public string birthDate { get; set; }
         public int age { get; set; }
+       public static object PersonList { get; internal set; }
     }
-
+     
 }

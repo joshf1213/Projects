@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Welcome";
 }
+@model List<lab4.Models.PersonRepo>
 
 <h2>Welcome to Josh Friedman's Web App</h2>
 <body>
@@ -22,6 +23,8 @@
         </script></h3>
     <h4>The time is @ViewData["hour"]:@ViewData["minutes"] @ViewData["ampm"] on @ViewData["day"] @ViewData["month"], @ViewData["date"] @ViewData["year"]</h4>
     <h4>@ViewData["daystillend"] more days until 2017</h4>
+
+    
 </body>
 
 
